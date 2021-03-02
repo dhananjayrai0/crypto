@@ -65,9 +65,9 @@ func (c *chacha20poly1305) Seal(dst, nonce, plaintext, additionalData []byte) []
 var errOpen = errors.New("chacha20poly1305: message authentication failed")
 
 func (c *chacha20poly1305) Open(dst, nonce, ciphertext, additionalData []byte) ([]byte, error) {
-	if len(nonce) != NonceSize {
-		panic("chacha20poly1305: bad nonce length passed to Open")
-	}
+	//if len(nonce) != NonceSize {
+	//	panic("chacha20poly1305: bad nonce length passed to Open")
+	//}
 	if len(ciphertext) < 16 {
 		return nil, errOpen
 	}
